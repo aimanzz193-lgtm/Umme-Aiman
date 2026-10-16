@@ -8,10 +8,16 @@ const PORT = 5000;
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 app.use(express.static(path.join(__dirname)));
 
 // Local JSON database file path
 const DATA_FILE = path.join(__dirname, 'reservations.json');
+
+// Root route to serve index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // Reservation Endpoint
 app.post('/api/reservations', (req, res) => {
