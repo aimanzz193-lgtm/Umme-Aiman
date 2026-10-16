@@ -1,0 +1,463 @@
+/* ==========================================================================
+   Morrow Espress Co. - Complete Stylesheet
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+:root {
+    --bg-primary: #FAF9F6;
+    --bg-surface: #FFFFFF;
+    --text-dark: #2D3E2D;
+    --text-muted: #6B7C6B;
+    --matcha-primary: #729762;
+    --matcha-hover: #5A7B4D;
+    --matcha-light: #EEF3EC;
+    --border-color: #E2E8E0;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Navigation --- */
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 50px;       /* Adjusted side padding */
+    background-color: var(--bg-surface);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    white-space: nowrap;       /* Prevents Morrow Espress Co. from breaking into 2 lines */
+}
+
+.logo span {
+    color: var(--matcha-primary);
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;                 /* Adds clean, balanced spacing between nav links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    white-space: nowrap;       /* Prevents 'Pre-Order' and 'Table Booking' from wrapping */
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--matcha-primary);
+}
+
+.nav-btn {
+    white-space: nowrap;       /* Keeps 'Book Table' single line */
+    padding: 10px 22px;        /* Fixed padding so button doesn't stretch tall */
+    font-size: 0.9rem;
+    border-radius: 30px;
+}
+.btn-primary {
+    display: inline-block;
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--matcha-hover);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* --- Hero --- */
+.hero {
+    position: relative;
+    padding: 140px 80px;
+    min-height: 85vh;
+    background: linear-gradient(rgba(45, 62, 45, 0.65), rgba(45, 62, 45, 0.65)), 
+                url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero .badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* --- Menu Section --- */
+.menu-section {
+    padding: 100px 80px;
+    background-color: var(--bg-surface);
+}
+
+.section-title {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px auto;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.menu-card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 0 0 20px 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-soft);
+    border-color: var(--matcha-primary);
+}
+
+.menu-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+.menu-info {
+    padding: 20px 20px 10px 20px;
+}
+
+.menu-info h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.menu-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.menu-info .price {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--matcha-primary);
+    margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+    margin: 10px 20px 0 20px;
+    width: calc(100% - 40px);
+    background-color: var(--matcha-light);
+    color: var(--matcha-primary);
+    border: 1px solid var(--matcha-primary);
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--matcha-primary);
+    color: #FFFFFF;
+}
+
+/* --- SEPARATE PRE-ORDER SECTION --- */
+.preorder-section {
+    padding: 80px 80px;
+    background-color: var(--bg-primary);
+}
+
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cart-box {
+    background-color: var(--bg-surface);
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+}
+
+.cart-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+.cart-items-list {
+    min-height: 120px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.empty-cart-msg {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-style: italic;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+    font-size: 1.1rem;
+}
+
+.cart-total strong {
+    color: var(--matcha-primary);
+    font-size: 1.3rem;
+}
+
+/* --- SEPARATE RESERVATION SECTION --- */
+.reservation-section {
+    padding: 80px 80px 100px 80px;
+    background-color: var(--bg-surface);
+}
+
+.reservation-container {
+    max-width: 750px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-color);
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row input,
+.form-row select,
+.full-width select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--bg-surface);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.full-width select:focus {
+    border-color: var(--matcha-primary);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* --- FOOTER STYLES --- */
+.footer {
+    background-color: #243324;
+    color: #E2E8E0;
+    padding: 70px 80px 20px 80px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+.footer-brand .logo {
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.footer-brand p {
+    color: #A3B5A3;
+    font-size: 0.95rem;
+    max-width: 320px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: #A3B5A3;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #FFFFFF;
+}
+
+.footer-contact p {
+    color: #A3B5A3;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #7E947E;
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar, .hero, .menu-section, .preorder-section, .reservation-section, .footer {
+        padding: 40px 24px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+}
+/* Fix for Book Table Navbar Button */
+.navbar .nav-btn,
+a.nav-btn {
+    display: inline-block;
+    background-color: #729762 !important; /* Matcha Green */
+    color: #FFFFFF !important;              /* White Text */
+    padding: 10px 22px !important;
+    border-radius: 30px !important;
+    text-decoration: none !important;      /* Removes purple underline */
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-btn:hover,
+a.nav-btn:hover {
+    background-color: #5A7B4D !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+}

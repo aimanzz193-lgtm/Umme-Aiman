@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morrow Espress Co. | Gulshan-e-Iqbal, Karachi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            Morrow <span>Espress Co.</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#preorder">Pre-Order</a>
+            <a href="#reservation">Table Booking</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="#reservation" class="btn-primary nav-btn">Book Table</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge">Gulshan-e-Iqbal, Block 3</span>
+            <h1>Craft Coffee & Ceremonial Matcha</h1>
+            <p>Experience minimal luxury and handcrafted brews at Morrow Espress Co.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn-primary">Explore Menu</a>
+                <a href="#reservation" class="btn-secondary">Reserve a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="section-title">
+            <h2>Our Signature Menu</h2>
+            <p>Select items below to add them directly to your Pre-Order Cart.</p>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?auto=format&fit=crop&w=600&q=80" alt="Iced Ceremonial Matcha" class="menu-img">
+                <div class="menu-info">
+                    <h4>Iced Ceremonial Matcha</h4>
+                    <p>First-harvest Uji matcha layered with fresh milk.</p>
+                    <span class="price">PKR 750</span>
+                </div>
+                <button type="button" class="add-to-cart-btn" data-name="Iced Ceremonial Matcha" data-price="750">
+                    + Add to Pre-Order
+                </button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80" alt="Morrow Spanish Latte" class="menu-img">
+                <div class="menu-info">
+                    <h4>Morrow Spanish Latte</h4>
+                    <p>Signature espresso blend with condensed milk and cinnamon.</p>
+                    <span class="price">PKR 650</span>
+                </div>
+                <button type="button" class="add-to-cart-btn" data-name="Morrow Spanish Latte" data-price="650">
+                    + Add to Pre-Order
+                </button>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Signature Smash Burger" class="menu-img">
+                <div class="menu-info">
+                    <h4>Signature Smash Burger</h4>
+                    <p>Double smashed beef patties, cheddar, pickles, house sauce.</p>
+                    <span class="price">PKR 1150</span>
+                </div>
+                <button type="button" class="add-to-cart-btn" data-name="Signature Smash Burger" data-price="1150">
+                    + Add to Pre-Order
+                </button>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Fresh Butter Croissant" class="menu-img">
+                <div class="menu-info">
+                    <h4>Fresh Butter Croissant</h4>
+                    <p>Flaky, hand-laminated French butter croissant.</p>
+                    <span class="price">PKR 480</span>
+                </div>
+                <button type="button" class="add-to-cart-btn" data-name="Fresh Butter Croissant" data-price="480">
+                    + Add to Pre-Order
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: SEPARATE PRE-ORDER CART SECTION -->
+    <section id="preorder" class="preorder-section">
+        <div class="section-title">
+            <h2>Your Pre-Order Cart</h2>
+            <p>Review items added from the menu above before confirming your order.</p>
+        </div>
+
+        <div class="cart-container">
+            <div class="cart-box">
+                <h3>Selected Items</h3>
+                <div id="cart-items-list" class="cart-items-list">
+                    <p class="empty-cart-msg">No items added yet. Click "+ Add to Pre-Order" on menu items above.</p>
+                </div>
+                <div class="cart-total">
+                    <span>Subtotal:</span>
+                    <strong>PKR <span id="cart-total-amount">0</span></strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: SEPARATE TABLE RESERVATION SECTION -->
+    <section id="reservation" class="reservation-section">
+        <div class="section-title">
+            <h2>Book a Reservation</h2>
+            <p>Secure your table at Morrow Espress Co. Options selected in Pre-Order will be linked automatically.</p>
+        </div>
+
+        <div class="reservation-container">
+            <form class="reservation-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-row">
+                    <input type="date" required>
+                    <input type="time" required>
+                </div>
+                <div class="form-row full-width">
+                    <select required>
+                        <option value="" disabled selected>Number of Guests</option>
+                        <option value="1 Person">1 Person</option>
+                        <option value="2 Persons">2 Persons</option>
+                        <option value="3 Persons">3 Persons</option>
+                        <option value="4 Persons">4 Persons</option>
+                        <option value="5+ Persons">5+ Persons</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary submit-btn">Confirm Reservation & Pre-Order</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">Morrow <span>Espress Co.</span></div>
+                <p>Minimalist coffee house crafting ceremonial grade matcha and specialty espresso brews.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#preorder">Pre-Order Cart</a>
+                <a href="#reservation">Book Table</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Location & Hours</h4>
+                <p>📍 Block 3, Gulshan-e-Iqbal, Karachi</p>
+                <p>📞 +92 330 8327248</p>
+                <p>⏰ Open Daily: 08:00 AM - 12:00 AM</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Morrow Espress Co. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
