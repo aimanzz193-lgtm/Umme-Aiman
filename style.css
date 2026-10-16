@@ -28,13 +28,12 @@ body {
     overflow-x: hidden;
 }
 
-/* --- Navigation --- */
 /* --- Navigation Bar --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 50px;       /* Adjusted side padding */
+    padding: 16px 50px;
     background-color: var(--bg-surface);
     position: sticky;
     top: 0;
@@ -46,7 +45,7 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-dark);
-    white-space: nowrap;       /* Prevents Morrow Espress Co. from breaking into 2 lines */
+    white-space: nowrap;
 }
 
 .logo span {
@@ -57,7 +56,7 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 24px;                 /* Adds clean, balanced spacing between nav links */
+    gap: 24px;
 }
 
 .nav-links a {
@@ -65,7 +64,7 @@ body {
     color: var(--text-dark);
     font-weight: 500;
     font-size: 0.95rem;
-    white-space: nowrap;       /* Prevents 'Pre-Order' and 'Table Booking' from wrapping */
+    white-space: nowrap;
     transition: color 0.2s ease;
 }
 
@@ -73,12 +72,28 @@ body {
     color: var(--matcha-primary);
 }
 
-.nav-btn {
-    white-space: nowrap;       /* Keeps 'Book Table' single line */
-    padding: 10px 22px;        /* Fixed padding so button doesn't stretch tall */
+/* Fix for Book Table Navbar Button */
+.navbar .nav-btn,
+a.nav-btn {
+    display: inline-block;
+    background-color: var(--matcha-primary) !important;
+    color: #FFFFFF !important;
+    padding: 10px 22px !important;
+    border-radius: 30px !important;
+    text-decoration: none !important;
+    font-weight: 600;
     font-size: 0.9rem;
-    border-radius: 30px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
+
+.navbar .nav-btn:hover,
+a.nav-btn:hover {
+    background-color: var(--matcha-hover) !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+}
+
 .btn-primary {
     display: inline-block;
     background-color: transparent;
@@ -255,7 +270,7 @@ body {
     color: #FFFFFF;
 }
 
-/* --- SEPARATE PRE-ORDER SECTION --- */
+/* --- Pre-Order Section --- */
 .preorder-section {
     padding: 80px 80px;
     background-color: var(--bg-primary);
@@ -309,7 +324,7 @@ body {
     font-size: 1.3rem;
 }
 
-/* --- SEPARATE RESERVATION SECTION --- */
+/* --- Reservation Section --- */
 .reservation-section {
     padding: 80px 80px 100px 80px;
     background-color: var(--bg-surface);
@@ -363,7 +378,7 @@ body {
     font-size: 1rem;
 }
 
-/* --- FOOTER STYLES --- */
+/* --- Footer --- */
 .footer {
     background-color: #243324;
     color: #E2E8E0;
@@ -427,99 +442,68 @@ body {
     font-size: 0.85rem;
 }
 
-/* Responsive */
+/* ==========================================
+   MOBILE RESPONSIVE STYLES (max-width: 768px)
+   ========================================== */
 @media (max-width: 768px) {
-    .navbar, .hero, .menu-section, .preorder-section, .reservation-section, .footer {
-        padding: 40px 24px;
+    body {
+        overflow-x: hidden;
+        padding: 0;
     }
+
+    /* Stack Header & Center Logo + Links */
+    .navbar {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 16px 15px !important;
+        gap: 12px !important;
+    }
+
+    .logo {
+        margin-bottom: 4px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 10px 14px !important;
+        width: 100% !important;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem !important;
+    }
+
+    /* Padding adjustments for mobile sections */
+    .hero, 
+    .menu-section, 
+    .preorder-section, 
+    .reservation-section, 
+    .footer {
+        padding: 40px 20px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
     .footer-container {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    .form-row {
-        flex-direction: column;
+
+    .menu-grid {
+        grid-template-columns: 1fr;
     }
-}
-/* Fix for Book Table Navbar Button */
-.navbar .nav-btn,
-a.nav-btn {
-    display: inline-block;
-    background-color: #729762 !important; /* Matcha Green */
-    color: #FFFFFF !important;              /* White Text */
-    padding: 10px 22px !important;
-    border-radius: 30px !important;
-    text-decoration: none !important;      /* Removes purple underline */
-    font-weight: 600;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-}
-
-.navbar .nav-btn:hover,
-a.nav-btn:hover {
-    background-color: #5A7B4D !important;
-    color: #FFFFFF !important;
-    transform: translateY(-2px);
-}
-
-/* ==========================================
-   MOBILE RESPONSIVE STYLES
-   ========================================== */
-@media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-    padding: 0 10px;
-  }
-
-  /* Make containers and headers fit mobile screens */
-  .container, header, nav, section {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box;
-  }
-
-  /* Stack Navigation Links */
-  .nav-links, nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
-  /* Adjust headings and paragraphs for smaller screens */
-  h1 {
-    font-size: 1.7rem !important;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 1.4rem !important;
-    text-align: center;
-  }
-
-  p {
-    font-size: 0.95rem;
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  /* Stack menu grids or cards vertically */
-  .menu-grid, .grid, .card-container {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 15px;
-  }
-
-  /* Ensure images scale correctly */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  /* Full-width touch-friendly buttons & inputs */
-  button, .btn, input, select, textarea {
-    width: 100% !important;
-    box-sizing: border-box;
-  }
 }
