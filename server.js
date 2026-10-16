@@ -8,7 +8,7 @@ const PORT = 5000;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(express.static(path.join(__dirname)));
 
 // Local JSON database file path
 const DATA_FILE = path.join(__dirname, 'reservations.json');
